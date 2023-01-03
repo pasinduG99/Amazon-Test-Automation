@@ -3,6 +3,7 @@ package com;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class Header {
 
@@ -28,6 +29,21 @@ public class Header {
 		driver.findElement(By.id("ap_password")).sendKeys("Casio10#");
 		
 		driver.findElement(By.xpath("//input[@id='signInSubmit']")).click(); 
+
+		
+		
+		//Test Search Bar
+		Select selectelement = new Select(driver.findElement(By.xpath("//select[@id='searchDropdownBox']")));
+		
+		selectelement.selectByValue("search-alias=electronics-intl-ship");
+		
+		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Mobile");
+		
+		driver.findElement(By.id("nav-search-submit-button")).click();
+		
+		//Navigate backward
+		driver.navigate().back();
+		
 		
 		
 
