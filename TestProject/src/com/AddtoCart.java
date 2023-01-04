@@ -41,6 +41,32 @@ public class AddtoCart {
 		//Add to cart
 		driver.findElement(By.xpath("//input[@id='add-to-cart-button']")).click();
 		
+		//Go to Cart
+		driver.findElement(By.xpath("//a[normalize-space()='Go to Cart']")).click();
+		
+		//Change quantity
+		driver.findElement(By.xpath("//span[@id='a-autoid-0-announce']")).click();
+		
+		//Change quantity to 2
+		driver.findElement(By.xpath("//a[@id='quantity_2']")).click();
+		
+		//Verify  the url
+		String act_url = driver.getCurrentUrl();
+		System.out.println(act_url);
+				
+		//verify 
+		String desired_url = "https://www.amazon.com/gp/cart/view.html?ref_=sw_gtc";
+		if(act_url.equals(desired_url))
+		{
+			System.out.println("Pass");
+		}
+		else
+			System.out.println("Fail");
+				
+		//close the browser
+		driver.close();
+		
+		
 		
 
 	}
