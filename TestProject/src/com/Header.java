@@ -44,6 +44,16 @@ public class Header {
 		//Navigate backward
 		driver.navigate().back();
 		
+		//Test sidemenu
+		driver.findElement(By.xpath("//span[@class='hm-icon-label']")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[2]/div[1]/ul[1]/li[8]/a[1]/i[1]")).click();
+		driver.findElement(By.linkText("Laptop Accessories")).click();
+		
+		
+		//Test Customer Service
+		driver.findElement(By.xpath("//div[@id='nav-main']//a[2]")).click();
+		
+		
 		
 		
 
